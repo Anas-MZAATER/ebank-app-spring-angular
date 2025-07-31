@@ -1,0 +1,53 @@
+# Normalize line endings across OS
+* text=auto
+
+# Frontend: Angular files
+*.ts     text
+*.html   text
+*.css    text
+*.scss   text
+*.json   text
+*.md     text
+*.yml    text
+
+# Backend: Java + Spring files
+*.java   text
+*.xml    text
+*.properties text
+*.gradle text
+*.sql    text
+
+# Shell and batch scripts
+*.sh     text eol=lf
+*.bat    text eol=crlf
+
+# Treat images as binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.svg    text
+
+# Font and other binary assets
+*.woff   binary
+*.woff2  binary
+*.eot    binary
+*.ttf    binary
+
+# Avoid merge conflicts in lock files (optional)
+package-lock.json merge=ours
+pnpm-lock.yaml    merge=ours
+yarn.lock         merge=ours
+
+# GitHub linguist overrides (optional)
+*.spec.ts linguist-documentation
+*.config.js linguist-generated
+
+# Export ignore (exclude from ZIP downloads)
+.gitignore export-ignore
+.gitattributes export-ignore
+README.md export-ignore
+
+/mvnw text eol=lf
+*.cmd text eol=crlf
