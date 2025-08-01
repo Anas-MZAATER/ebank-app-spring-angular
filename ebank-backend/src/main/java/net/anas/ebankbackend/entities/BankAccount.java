@@ -9,17 +9,18 @@ import java.util.List;
 
 //JPA
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 // discriminatorType par defaut de type string
 // length par defaut est le max, ON CHOISIS AU MAX 4 CARACTER
 @DiscriminatorColumn(name = "type", length=4, discriminatorType=DiscriminatorType.STRING)
 //Lombok
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString
-public class BankAccount {
+public abstract class BankAccount {
     @Id
     private String id;
     private double balance;
     private Date createdAt;
+    @Enumerated(EnumType.STRING)
     private AccountStatus status;
     @ManyToOne //REPRESENTER DANS LES CARDINALITER PAR 1
     private Customer customer;
