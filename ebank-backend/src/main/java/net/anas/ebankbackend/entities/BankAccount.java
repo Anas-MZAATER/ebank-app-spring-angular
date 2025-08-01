@@ -7,13 +7,13 @@ import net.anas.ebankbackend.enums.AccountStatus;
 import java.util.Date;
 import java.util.List;
 
-//JPA
+///JPA Annotation
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 // discriminatorType par defaut de type string
-// length par defaut est le max, ON CHOISIS AU MAX 4 CARACTER
+// length par defaut est le max, ON A CHOISIS 4 CARACTER AU MAX
 @DiscriminatorColumn(name = "type", length=4, discriminatorType=DiscriminatorType.STRING)
-//Lombok
+///Lombok Annotation
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString
 public abstract class BankAccount {
     @Id
@@ -22,8 +22,10 @@ public abstract class BankAccount {
     private Date createdAt;
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
-    @ManyToOne //REPRESENTER DANS LES CARDINALITER PAR 1
+    @ManyToOne // Représenter dans les cardinaliter par 1
     private Customer customer;
-    @OneToMany(mappedBy = "bankAccount")
+    @OneToMany(mappedBy = "bankAccount", fetch = FetchType.LAZY)
+    // LAZY : charger à la demande
+    // non dans le main se fais dans la couche service avec @transaction
     private List<AccountOperation> accountOperations;
 }
