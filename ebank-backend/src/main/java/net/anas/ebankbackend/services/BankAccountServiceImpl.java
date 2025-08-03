@@ -2,12 +2,14 @@ package net.anas.ebankbackend.services;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import net.anas.ebankbackend.dtos.CustomerDTO;
 import net.anas.ebankbackend.entities.*;
 import net.anas.ebankbackend.enums.OperationType;
 import net.anas.ebankbackend.exceptions.BalanceNotSufficientException;
 import net.anas.ebankbackend.exceptions.BankAccountNotFoundException;
 import net.anas.ebankbackend.exceptions.CustomerAlreadyExistException;
 import net.anas.ebankbackend.exceptions.CustomerNotFoundException;
+import net.anas.ebankbackend.mappers.BankAccountMapperImpl;
 import net.anas.ebankbackend.repositories.AccountOperationRepo;
 import net.anas.ebankbackend.repositories.BanckAccountRepo;
 import net.anas.ebankbackend.repositories.CustomerRepo;
@@ -17,10 +19,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -34,6 +38,7 @@ public class BankAccountServiceImpl implements BankAccountService {
     private CustomerRepo customerRepo;
     private BanckAccountRepo banckAccountRepo;
     private AccountOperationRepo accountOperationRepo;
+    private BankAccountMapperImpl dtoMapper;
 
     /// use la journalisation "log4j" via l'API "slf4j"
     /// l'objet avec laquel on peut logger dans notre application
@@ -111,8 +116,19 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
     @Override
-    public List<Customer> getCustomers() {
-        return customerRepo.findAll();
+    public List<CustomerDTO> getCustomers() {
+        List<Customer> customers = customerRepo.findAll();
+        List<CustomerDTO> dtoCustomers = customers.stream()
+                .map(customer -> dtoMapper.toCustomerDTO(customer))
+                .collect(Collectors.toList());
+        /* // Using la programmation interactif(classique)
+        List<CustomerDTO> customerDTOs = new ArrayList<>();
+        for (Customer customer : customers) {
+            CustomerDTO customerDTO = dtoMapper.toCustomerDTO(customer);
+            customerDTOs.add(customerDTO);
+        }*/
+
+        return dtoCustomers;
     }
 
     @Override

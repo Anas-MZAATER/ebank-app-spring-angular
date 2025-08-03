@@ -1,6 +1,7 @@
 package net.anas.ebankbackend.services;
 
 import jdk.dynalink.Operation;
+import net.anas.ebankbackend.dtos.CustomerDTO;
 import net.anas.ebankbackend.entities.BankAccount;
 import net.anas.ebankbackend.entities.CurrentAcount;
 import net.anas.ebankbackend.entities.Customer;
@@ -17,7 +18,7 @@ public interface BankAccountService {
     Customer createCustomer(Customer customer) throws CustomerAlreadyExistException;
     CurrentAcount createCurrentBankAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException;
     SavingAcount createSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
-    List<Customer> getCustomers();
+    List<CustomerDTO> getCustomers();
     BankAccount getBankAccount(String accountId) throws AccountNotFoundException, BankAccountNotFoundException;
     void debit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;
     void credit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;
