@@ -22,8 +22,10 @@ public abstract class BankAccount {
     private Date createdAt;
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
+
     @ManyToOne // Représenter dans les cardinaliter par 1
     private Customer customer;
+
     @OneToMany(mappedBy = "bankAccount", fetch = FetchType.LAZY)
     // LAZY : charger à la demande
     // non dans le main se fais dans la couche service avec @transaction

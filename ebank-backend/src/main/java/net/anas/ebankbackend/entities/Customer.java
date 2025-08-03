@@ -11,6 +11,7 @@ public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(unique = true)
     private String email;
     @OneToMany(mappedBy = "customer") //REPRESENTER DANS LES CARDINALITER PAR *
     private List<BankAccount> bankAccounts;

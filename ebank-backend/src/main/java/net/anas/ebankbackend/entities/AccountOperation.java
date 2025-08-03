@@ -15,8 +15,10 @@ public class AccountOperation {
     private Long id;
     private Date operationDate;
     private double amount;
+    private String description;
     // @Enumerated(EnumType.ORDINAL) // par defaut c'est ORDINAL
     @Enumerated(EnumType.STRING)
+    @Column(name = "type", length = 10)
     private OperationType type;
     @ManyToOne
     private BankAccount bankAccount;
