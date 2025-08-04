@@ -13,17 +13,10 @@ import net.anas.ebankbackend.mappers.BankAccountMapperImpl;
 import net.anas.ebankbackend.repositories.AccountOperationRepo;
 import net.anas.ebankbackend.repositories.BanckAccountRepo;
 import net.anas.ebankbackend.repositories.CustomerRepo;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.security.auth.login.AccountNotFoundException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
-import java.util.logging.Logger;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -53,17 +46,34 @@ public class BankAccountServiceImpl implements BankAccountService {
 
 
     @Override
-    public Customer createCustomer(Customer customer) throws CustomerAlreadyExistException {
-        List<Customer> customers = customerRepo.findByEmail(customer.getEmail());
-        if (!customers.isEmpty()) {
+    public CustomerDTO createCustomer(CustomerDTO customerDTO) throws CustomerAlreadyExistException {
+        Customer customer = dtoMapper.toCustomer(customerDTO);
+        Customer oldCustomers = customerRepo.findByEmail(customer.getEmail());
+        if (oldCustomers != null) {
             // Handle the case where a customer already exists (e.g., update or throw an error)
             log.error("CustomerAlreadyExistException occurred: {}", customer.getEmail(), customer);
             throw new CustomerAlreadyExistException("Customer with email :" + customer.getEmail() + " already exists.");
         }
 
+        /* //2 eme solution
+        List<Customer> customers = customerRepo.findByEmail(customer.getEmail());
+        if (!customers.isEmpty()) {
+            // Handle the case where a customer already exists (e.g., update or throw an error)
+            log.error("CustomerAlreadyExistException occurred: {}", customer.getEmail(), customer);
+            throw new CustomerAlreadyExistException("Customer with email :" + customer.getEmail() + " already exists.");
+        }*/
+
+        /* //3 eme solution
+        Optional<Customer> customers = customerRepo.findByEmail(customer.getEmail());
+        if (customers.isPresent()) {
+            // Handle the case where a customer already exists (e.g., update or throw an error)
+            log.error("CustomerAlreadyExistException occurred: {}", customer.getEmail(), customer);
+            throw new CustomerAlreadyExistException("Customer with email :" + customer.getEmail() + " already exists.");
+        }*/
+
         Customer savedCustomer = customerRepo.save(customer);
         log.info("createCustomer with id:" + savedCustomer.getId() + " by X");
-        return savedCustomer;
+        return dtoMapper.toCustomerDTO(savedCustomer);
 
     }
 
@@ -121,6 +131,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         List<CustomerDTO> dtoCustomers = customers.stream()
                 .map(customer -> dtoMapper.toCustomerDTO(customer))
                 .collect(Collectors.toList());
+
         /* // Using la programmation interactif(classique)
         List<CustomerDTO> customerDTOs = new ArrayList<>();
         for (Customer customer : customers) {
@@ -129,6 +140,13 @@ public class BankAccountServiceImpl implements BankAccountService {
         }*/
 
         return dtoCustomers;
+    }
+
+    @Override
+    public CustomerDTO getCustomer(Long customerId) throws CustomerNotFoundException {
+        Customer customer = customerRepo.findById(customerId)
+                .orElseThrow(()->new CustomerNotFoundException("Customer with id: "+customerId+"not found"));
+        return dtoMapper.toCustomerDTO(customer);
     }
 
     @Override
@@ -183,4 +201,5 @@ public class BankAccountServiceImpl implements BankAccountService {
     public List<BankAccount> getAllBankAccount() {
         return banckAccountRepo.findAll();
     }
+
 }

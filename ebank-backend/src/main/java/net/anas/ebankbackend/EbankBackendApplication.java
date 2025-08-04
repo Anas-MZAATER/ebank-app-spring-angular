@@ -2,6 +2,7 @@ package net.anas.ebankbackend;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import net.anas.ebankbackend.dtos.CustomerDTO;
 import net.anas.ebankbackend.entities.*;
 import net.anas.ebankbackend.enums.AccountStatus;
 import net.anas.ebankbackend.enums.OperationType;
@@ -36,7 +37,7 @@ public class EbankBackendApplication {
         return args -> {
             ///initialze customer table
             Stream.of("walid","anas","karim").forEach(name -> {
-                Customer customer = new Customer();
+                CustomerDTO customer = new CustomerDTO();
                 customer.setName(name);
                 customer.setEmail(name+"@gmail.com");
                 try {
