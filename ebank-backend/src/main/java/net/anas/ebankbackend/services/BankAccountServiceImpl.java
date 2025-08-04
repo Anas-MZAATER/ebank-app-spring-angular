@@ -13,8 +13,11 @@ import net.anas.ebankbackend.mappers.BankAccountMapperImpl;
 import net.anas.ebankbackend.repositories.AccountOperationRepo;
 import net.anas.ebankbackend.repositories.BanckAccountRepo;
 import net.anas.ebankbackend.repositories.CustomerRepo;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -148,6 +151,32 @@ public class BankAccountServiceImpl implements BankAccountService {
                 .orElseThrow(()->new CustomerNotFoundException("Customer with id: "+customerId+"not found"));
         return dtoMapper.toCustomerDTO(customer);
     }
+
+    @Override
+    public CustomerDTO updateCustomer(CustomerDTO customerDTO) throws CustomerAlreadyExistException {
+        Customer customer = dtoMapper.toCustomer(customerDTO);
+        Customer oldCustomers = customerRepo.findByEmail(customer.getEmail());
+        if (oldCustomers != null) {
+            // Handle the case where a customer already exists (e.g., update or throw an error)
+            log.error("CustomerAlreadyExistException occurred: {}", customer.getEmail(), customer);
+            throw new CustomerAlreadyExistException("Customer with email :" + customer.getEmail() + " already exists.");
+        }
+        Customer savedCustomer = customerRepo.save(customer);
+        log.info("updateCustomer with id:" + savedCustomer.getId() + " by X");
+        return dtoMapper.toCustomerDTO(savedCustomer);
+    }
+
+    @Override
+    public void deleteCustomer(Long customerId){
+        try {
+            customerRepo.deleteById(customerId);
+            log.info("deleteCustomer with id:" + customerId + " by X");
+        } catch (DataIntegrityViolationException e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Cannot delete customer. Bank accounts are still associated.");
+        }
+    }
+
 
     @Override
     public BankAccount getBankAccount(String accountId) throws BankAccountNotFoundException {

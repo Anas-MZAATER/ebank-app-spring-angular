@@ -25,6 +25,10 @@ public interface BankAccountService {
 
     CustomerDTO getCustomer(Long customerId) throws CustomerNotFoundException;
 
+    CustomerDTO updateCustomer(CustomerDTO customerDTO) throws CustomerAlreadyExistException;
+
+    void deleteCustomer(Long customerId);
+
     BankAccount getBankAccount(String accountId) throws AccountNotFoundException, BankAccountNotFoundException;
 
     void debit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;

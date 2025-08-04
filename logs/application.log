@@ -1604,3 +1604,258 @@ net.anas.ebankbackend.exceptions.CustomerNotFoundException: Customer with id: 4n
 2025-08-04T15:56:25.947+01:00  INFO 29164 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-08-04T15:56:25.948+01:00  INFO 29164 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-08-04T15:56:25.954+01:00  INFO 29164 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-04T16:01:59.880+01:00  INFO 16052 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Starting EbankBackendApplication using Java 21.0.5 with PID 16052 (D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular\ebank-backend\target\classes started by User in D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular)
+2025-08-04T16:01:59.882+01:00 DEBUG 16052 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-04T16:01:59.882+01:00  INFO 16052 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-04T16:02:00.605+01:00  INFO 16052 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-04T16:02:00.653+01:00  INFO 16052 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2025-08-04T16:02:01.049+01:00  INFO 16052 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-08-04T16:02:01.064+01:00  INFO 16052 --- [ebank-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-04T16:02:01.064+01:00  INFO 16052 --- [ebank-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-04T16:02:01.133+01:00  INFO 16052 --- [ebank-backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-04T16:02:01.134+01:00  INFO 16052 --- [ebank-backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2025-08-04T16:02:01.277+01:00  INFO 16052 --- [ebank-backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-04T16:02:01.339+01:00  INFO 16052 --- [ebank-backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-04T16:02:01.366+01:00  INFO 16052 --- [ebank-backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-04T16:02:01.575+01:00  INFO 16052 --- [ebank-backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-04T16:02:01.598+01:00  INFO 16052 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-04T16:02:01.919+01:00  INFO 16052 --- [ebank-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7283877
+2025-08-04T16:02:01.921+01:00  INFO 16052 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-04T16:02:02.054+01:00  WARN 16052 --- [ebank-backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-04T16:02:02.084+01:00  INFO 16052 --- [ebank-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-04T16:02:03.153+01:00  INFO 16052 --- [ebank-backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-04T16:02:03.523+01:00  INFO 16052 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-04T16:02:03.882+01:00  WARN 16052 --- [ebank-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-04T16:02:04.351+01:00  INFO 16052 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-08-04T16:02:04.364+01:00  INFO 16052 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Started EbankBackendApplication in 5.012 seconds (process running for 5.756)
+2025-08-04T16:02:04.368+01:00  INFO 16052 --- [ebank-backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-04T16:02:04.376+01:00  INFO 16052 --- [ebank-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-04T16:02:04.383+01:00  INFO 16052 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-04T16:02:04.385+01:00  INFO 16052 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-04T16:02:04.399+01:00  INFO 16052 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-04T16:02:04.400+01:00  WARN 16052 --- [ebank-backend] [main] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@7283877 marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:65) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1967) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-6.3.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-6.3.1.jar:na]
+	at org.hibernate.resource.jdbc.internal.AbstractLogicalConnectionImplementor.rollback(AbstractLogicalConnectionImplementor.java:127) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.rollback(JdbcResourceLocalTransactionCoordinatorImpl.java:289) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.rollback(TransactionImpl.java:142) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doRollback(JpaTransactionManager.java:589) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:897) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:866) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:716) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:384) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.9.jar:6.2.9]
+	at net.anas.ebankbackend.services.BankAccountServiceImpl$$SpringCGLIB$$0.createCustomer(<generated>) ~[classes/:na]
+	at net.anas.ebankbackend.EbankBackendApplication.lambda$start$0(EbankBackendApplication.java:44) ~[classes/:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at net.anas.ebankbackend.EbankBackendApplication.lambda$start$2(EbankBackendApplication.java:39) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:788) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82) ~[spring-core-6.2.9.jar:6.2.9]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.2.9.jar:6.2.9]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86) ~[spring-core-6.2.9.jar:6.2.9]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772) ~[spring-boot-3.5.4.jar:3.5.4]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at net.anas.ebankbackend.EbankBackendApplication.main(EbankBackendApplication.java:31) ~[classes/:na]
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:929) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:561) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1918) ~[mysql-connector-j-9.3.0.jar:9.3.0]
+	... 38 common frames omitted
+
+2025-08-04T16:02:06.688+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Starting EbankBackendApplication using Java 21.0.5 with PID 19156 (D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular\ebank-backend\target\classes started by User in D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular)
+2025-08-04T16:02:06.690+01:00 DEBUG 19156 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-04T16:02:06.690+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-04T16:02:07.361+01:00  INFO 19156 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-04T16:02:07.404+01:00  INFO 19156 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2025-08-04T16:02:07.764+01:00  INFO 19156 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-08-04T16:02:07.779+01:00  INFO 19156 --- [ebank-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-04T16:02:07.780+01:00  INFO 19156 --- [ebank-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-04T16:02:07.845+01:00  INFO 19156 --- [ebank-backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-04T16:02:07.846+01:00  INFO 19156 --- [ebank-backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1107 ms
+2025-08-04T16:02:07.963+01:00  INFO 19156 --- [ebank-backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-04T16:02:08.002+01:00  INFO 19156 --- [ebank-backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-04T16:02:08.041+01:00  INFO 19156 --- [ebank-backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-04T16:02:08.232+01:00  INFO 19156 --- [ebank-backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-04T16:02:08.253+01:00  INFO 19156 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-04T16:02:08.503+01:00  INFO 19156 --- [ebank-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@335b3d6
+2025-08-04T16:02:08.504+01:00  INFO 19156 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-04T16:02:08.545+01:00  WARN 19156 --- [ebank-backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-04T16:02:08.558+01:00  INFO 19156 --- [ebank-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-04T16:02:09.415+01:00  INFO 19156 --- [ebank-backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-04T16:02:09.748+01:00  INFO 19156 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-04T16:02:10.081+01:00  WARN 19156 --- [ebank-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-04T16:02:10.497+01:00  INFO 19156 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-08-04T16:02:10.503+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Started EbankBackendApplication in 4.277 seconds (process running for 4.977)
+2025-08-04T16:02:10.651+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:1 by X
+2025-08-04T16:02:10.670+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:2 by X
+2025-08-04T16:02:10.680+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:3 by X
+2025-08-04T16:02:10.722+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 8d96ad7e-d2f6-40cf-9df2-86561ae34e73 by: 1
+2025-08-04T16:02:10.740+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 65cca5f5-c889-4490-9341-019b82987b9e by :1
+2025-08-04T16:02:11.018+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 6474ccae-0f10-49c1-ba08-1ff2eb8b2aed by: 2
+2025-08-04T16:02:11.025+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 8e406727-d663-45dd-a762-547c222e2634 by :2
+2025-08-04T16:02:11.503+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: be0c4ee5-39dc-4302-9bcd-53b95e35b249 by: 3
+2025-08-04T16:02:11.517+01:00  INFO 19156 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: af81af71-3d67-4ab6-9f37-8a58a27c5d94 by :3
+2025-08-04T16:02:15.879+01:00  INFO 19156 --- [ebank-backend] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-04T16:02:15.880+01:00  INFO 19156 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-04T16:02:15.881+01:00  INFO 19156 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-04T16:02:16.333+01:00  INFO 19156 --- [ebank-backend] [http-nio-8083-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 216 ms
+2025-08-04T16:07:08.712+01:00  INFO 19156 --- [ebank-backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-04T16:07:08.717+01:00  INFO 19156 --- [ebank-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-04T16:07:08.720+01:00  INFO 19156 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-04T16:07:08.722+01:00  INFO 19156 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-04T16:07:08.726+01:00  INFO 19156 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-04T16:07:26.112+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Starting EbankBackendApplication using Java 21.0.5 with PID 27452 (D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular\ebank-backend\target\classes started by User in D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular)
+2025-08-04T16:07:26.117+01:00 DEBUG 27452 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-04T16:07:26.118+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-04T16:07:27.064+01:00  INFO 27452 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-04T16:07:27.160+01:00  INFO 27452 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2025-08-04T16:07:27.790+01:00  INFO 27452 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-08-04T16:07:27.807+01:00  INFO 27452 --- [ebank-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-04T16:07:27.808+01:00  INFO 27452 --- [ebank-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-04T16:07:27.879+01:00  INFO 27452 --- [ebank-backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-04T16:07:27.880+01:00  INFO 27452 --- [ebank-backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1698 ms
+2025-08-04T16:07:28.104+01:00  INFO 27452 --- [ebank-backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-04T16:07:28.156+01:00  INFO 27452 --- [ebank-backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-04T16:07:28.225+01:00  INFO 27452 --- [ebank-backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-04T16:07:28.494+01:00  INFO 27452 --- [ebank-backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-04T16:07:28.532+01:00  INFO 27452 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-04T16:07:28.920+01:00  INFO 27452 --- [ebank-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@335b3d6
+2025-08-04T16:07:28.922+01:00  INFO 27452 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-04T16:07:28.985+01:00  WARN 27452 --- [ebank-backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-04T16:07:29.005+01:00  INFO 27452 --- [ebank-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-04T16:07:30.271+01:00  INFO 27452 --- [ebank-backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-04T16:07:30.687+01:00  INFO 27452 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-04T16:07:31.244+01:00  WARN 27452 --- [ebank-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-04T16:07:31.832+01:00  INFO 27452 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-08-04T16:07:31.843+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Started EbankBackendApplication in 6.397 seconds (process running for 7.316)
+2025-08-04T16:07:32.046+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:1 by X
+2025-08-04T16:07:32.068+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:2 by X
+2025-08-04T16:07:32.079+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:3 by X
+2025-08-04T16:07:32.130+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: a5a28e43-9610-4aa3-9bbd-3e14c449d508 by: 1
+2025-08-04T16:07:32.153+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 8d5e6339-d6b3-4d40-a4b8-eab064fc0d44 by :1
+2025-08-04T16:07:32.524+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 0320df0c-5644-4032-8657-c837956eea23 by: 2
+2025-08-04T16:07:32.533+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 20153818-707d-4175-a3db-d80dbb0bcf8f by :2
+2025-08-04T16:07:33.147+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: a124b4d3-97bb-4fa8-a002-1c7aad86b40a by: 3
+2025-08-04T16:07:33.158+01:00  INFO 27452 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: dc9535a4-5914-4331-b8ff-94041b6333ed by :3
+2025-08-04T16:08:19.234+01:00  INFO 27452 --- [ebank-backend] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-04T16:08:19.234+01:00  INFO 27452 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-04T16:08:19.234+01:00  INFO 27452 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-04T16:08:19.384+01:00  INFO 27452 --- [ebank-backend] [http-nio-8083-exec-1] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:4 by X
+2025-08-04T16:08:50.418+01:00  INFO 27452 --- [ebank-backend] [http-nio-8083-exec-4] n.a.e.services.BankAccountServiceImpl    : updateCustomer with id:4 by X
+2025-08-04T16:09:05.351+01:00 ERROR 27452 --- [ebank-backend] [http-nio-8083-exec-3] n.a.e.services.BankAccountServiceImpl    : CustomerAlreadyExistException occurred: anas@gmail.com
+2025-08-04T16:09:05.369+01:00 ERROR 27452 --- [ebank-backend] [http-nio-8083-exec-3] n.a.e.exceptions.GlobalExceptionHandler  : CustomerAlreadyExistException occurred: Customer with email :anas@gmail.com already exists.
+
+net.anas.ebankbackend.exceptions.CustomerAlreadyExistException: Customer with email :anas@gmail.com already exists.
+	at net.anas.ebankbackend.services.BankAccountServiceImpl.updateCustomer(BankAccountServiceImpl.java:162) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.9.jar:6.2.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.9.jar:6.2.9]
+	at net.anas.ebankbackend.services.BankAccountServiceImpl$$SpringCGLIB$$0.updateCustomer(<generated>) ~[classes/:na]
+	at net.anas.ebankbackend.web.CustomerRestContoller.updateCustomer(CustomerRestContoller.java:39) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593) ~[tomcat-embed-core-10.1.43.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.43.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
