@@ -1,10 +1,7 @@
 package net.anas.ebankbackend.services;
 
 import jdk.dynalink.Operation;
-import net.anas.ebankbackend.dtos.BankAccountDTO;
-import net.anas.ebankbackend.dtos.CurrentAccountDTO;
-import net.anas.ebankbackend.dtos.CustomerDTO;
-import net.anas.ebankbackend.dtos.SavingAccountDTO;
+import net.anas.ebankbackend.dtos.*;
 import net.anas.ebankbackend.entities.BankAccount;
 import net.anas.ebankbackend.entities.CurrentAcount;
 import net.anas.ebankbackend.entities.Customer;
@@ -40,4 +37,5 @@ public interface BankAccountService {
 
     List<BankAccountDTO> getBankAccounts();
 
+    List<AccountOperationDTO> getAccountHistory(String accountId);
 }

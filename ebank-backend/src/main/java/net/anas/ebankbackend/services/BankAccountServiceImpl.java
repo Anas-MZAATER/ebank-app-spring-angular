@@ -2,10 +2,7 @@ package net.anas.ebankbackend.services;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.anas.ebankbackend.dtos.BankAccountDTO;
-import net.anas.ebankbackend.dtos.CurrentAccountDTO;
-import net.anas.ebankbackend.dtos.CustomerDTO;
-import net.anas.ebankbackend.dtos.SavingAccountDTO;
+import net.anas.ebankbackend.dtos.*;
 import net.anas.ebankbackend.entities.*;
 import net.anas.ebankbackend.enums.OperationType;
 import net.anas.ebankbackend.exceptions.BalanceNotSufficientException;
@@ -251,6 +248,14 @@ public class BankAccountServiceImpl implements BankAccountService {
             }
         }).toList();
         return bankAccountDTOS;
+    }
+
+
+    @Override
+    public List<AccountOperationDTO> getAccountHistory(String accountId) {
+        List<AccountOperation> accountOperations = accountOperationRepo.findByBankAccountId(accountId);
+        return accountOperations.stream().map(accountOperation -> dtoMapper
+                .toAccountOperationDTO(accountOperation)).toList();
     }
 
 }

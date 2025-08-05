@@ -1,8 +1,10 @@
 package net.anas.ebankbackend.mappers;
 
+import net.anas.ebankbackend.dtos.AccountOperationDTO;
 import net.anas.ebankbackend.dtos.CurrentAccountDTO;
 import net.anas.ebankbackend.dtos.CustomerDTO;
 import net.anas.ebankbackend.dtos.SavingAccountDTO;
+import net.anas.ebankbackend.entities.AccountOperation;
 import net.anas.ebankbackend.entities.CurrentAcount;
 import net.anas.ebankbackend.entities.Customer;
 import net.anas.ebankbackend.entities.SavingAcount;
@@ -67,5 +69,11 @@ public class BankAccountMapperImpl {
         currentAcount.setCustomer(toCustomer(currentAccountDTO.getCustomerDTO()));
         currentAccountDTO.setType(currentAcount.getClass().getSimpleName());
         return currentAccountDTO;
+    }
+
+    public AccountOperationDTO toAccountOperationDTO(AccountOperation accountOperation) {
+        AccountOperationDTO accountOperationDTO = new AccountOperationDTO();
+        BeanUtils.copyProperties(accountOperation, accountOperationDTO);
+        return accountOperationDTO;
     }
 }

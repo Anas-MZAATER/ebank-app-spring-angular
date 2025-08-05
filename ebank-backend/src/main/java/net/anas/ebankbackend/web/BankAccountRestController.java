@@ -1,6 +1,7 @@
 package net.anas.ebankbackend.web;
 
 import lombok.AllArgsConstructor;
+import net.anas.ebankbackend.dtos.AccountOperationDTO;
 import net.anas.ebankbackend.dtos.BankAccountDTO;
 import net.anas.ebankbackend.exceptions.BankAccountNotFoundException;
 import net.anas.ebankbackend.services.BankAccountService;
@@ -27,4 +28,8 @@ public class BankAccountRestController {
         return bankAccountService.getBankAccounts();
     }
 
+    @GetMapping("/accounts/{accountId}/operations")
+    public List<AccountOperationDTO> getAccountHistory(@PathVariable String accountId) {
+        return bankAccountService.getAccountHistory(accountId);
+    }
 }

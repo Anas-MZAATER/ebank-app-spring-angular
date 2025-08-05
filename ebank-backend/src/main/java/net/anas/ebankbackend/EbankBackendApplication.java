@@ -52,27 +52,32 @@ public class EbankBackendApplication {
             ///create foreach customer tow bankAcount
             bankAccountService.getCustomers().forEach(customer -> {
                 try {
-                    bankAccountService.createCurrentBankAccount(Math.random()*9000,9000,customer.getId());
+                    bankAccountService.createCurrentBankAccount(Math.random()*900000,9000,customer.getId());
                     bankAccountService.createSavingBankAccount(Math.random()*120000,5.5,customer.getId());
-                    ///initiaze foreach account five operation
-                    List<BankAccountDTO> bankAccounts = bankAccountService.getBankAccounts();
-                    for (BankAccountDTO bankAccount : bankAccounts) {
-                        for (int i = 0; i <= 5; i++) {
-                            String accountId;
-                            if (bankAccount instanceof SavingAccountDTO){
-                                accountId=((SavingAccountDTO) bankAccount).getId();
-                            }else {
-                                accountId=((CurrentAccountDTO)bankAccount).getId();
-                            }
-                            bankAccountService.credit(accountId, 1000 + Math.random() * 20000, "credit");
-                            bankAccountService.debit(accountId, 1000 + Math.random() * 9000, "debit");
-                        }
-                    }
-                } catch (CustomerNotFoundException | BankAccountNotFoundException | BalanceNotSufficientException e) {
+                } catch (CustomerNotFoundException e) {
                     e.printStackTrace();
                 }
-
             });
+
+            try {
+                ///initiaze foreach account five operation
+                List<BankAccountDTO> bankAccounts = bankAccountService.getBankAccounts();
+                for (BankAccountDTO bankAccount : bankAccounts) {
+                    for (int i = 0; i < 5; i++) {
+                        String accountId;
+                        if (bankAccount instanceof SavingAccountDTO){
+                            accountId=((SavingAccountDTO) bankAccount).getId();
+                        }else {
+                            accountId=((CurrentAccountDTO)bankAccount).getId();
+                        }
+                        bankAccountService.credit(accountId, 1000 + Math.random() * 20000, "credit");
+                        bankAccountService.debit(accountId, 1000 + Math.random() * 9000, "debit");
+                    }
+                }
+            } catch (BankAccountNotFoundException | BalanceNotSufficientException e) {
+                e.printStackTrace();
+            }
+
 
 
         };
