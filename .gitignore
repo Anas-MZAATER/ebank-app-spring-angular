@@ -1,7 +1,16 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 # 📦 Node.js dependencies (Angular & tools)
 **/node_modules/
 **/package-lock.json
 **/yarn.lock
+
+# 💬 Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+testem.log
+libpeerconnection.log
+connect.lock
 
 # 🛠️ Angular-specific files and outputs
 **/dist/
@@ -13,25 +22,6 @@
 **/.ng/
 **/e2e/test-output/
 **/bazel-out/
-
-# 💬 Logs
-**/npm-debug.log*
-**/yarn-debug.log*
-**/yarn-error.log*
-testem.log
-libpeerconnection.log
-connect.lock
-
-
-# Miscellaneous
-**/.angular/cache
-.sass-cache/
-**/connect.lock
-**/coverage
-**/libpeerconnection.log
-testem.log
-**/typings
-
 
 # 👨‍💻 Editor / IDE settings
 **/.idea/
@@ -49,10 +39,6 @@ testem.log
 .sts4-cache
 .apt_generated
 
-# 🧪 TypeScript cache and misc build cache
-*.tsbuildinfo
-.sass-cache/
-
 # ⚙️ VS Code
 **/.vscode/
 !.vscode/settings.json
@@ -60,6 +46,25 @@ testem.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/
+
+# Miscellaneous
+**/.angular/cache
+.sass-cache/
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+testem.log
+**/typings
+
+# 🧪 TypeScript cache and misc build cache
+*.tsbuildinfo
+.sass-cache/
+
+# 🖥️ System files
+.DS_Store
+Thumbs.db
+
+#=============#
 
 # 🌍 Environment files
 **/.env
@@ -82,11 +87,6 @@ testem.log
 
 # 📑 Helper files
 HELP.md
-
-# 🖥️ System files
-.DS_Store
-Thumbs.db
-
 
 ####################### Spring Specific:Intilij ###########################
 HELP.md
@@ -119,6 +119,3 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-### VS Code ###
-.vscode/
