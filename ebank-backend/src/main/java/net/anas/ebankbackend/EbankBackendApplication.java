@@ -2,7 +2,10 @@ package net.anas.ebankbackend;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import net.anas.ebankbackend.dtos.BankAccountDTO;
+import net.anas.ebankbackend.dtos.CurrentAccountDTO;
 import net.anas.ebankbackend.dtos.CustomerDTO;
+import net.anas.ebankbackend.dtos.SavingAccountDTO;
 import net.anas.ebankbackend.entities.*;
 import net.anas.ebankbackend.enums.AccountStatus;
 import net.anas.ebankbackend.enums.OperationType;
@@ -52,11 +55,17 @@ public class EbankBackendApplication {
                     bankAccountService.createCurrentBankAccount(Math.random()*9000,9000,customer.getId());
                     bankAccountService.createSavingBankAccount(Math.random()*120000,5.5,customer.getId());
                     ///initiaze foreach account five operation
-                    List<BankAccount> bankAccounts = bankAccountService.getAllBankAccount();
-                    for (BankAccount bankAccount : bankAccounts) {
+                    List<BankAccountDTO> bankAccounts = bankAccountService.getBankAccounts();
+                    for (BankAccountDTO bankAccount : bankAccounts) {
                         for (int i = 0; i <= 5; i++) {
-                            bankAccountService.credit(bankAccount.getId(), 1000 + Math.random() * 20000, "credit");
-                            bankAccountService.debit(bankAccount.getId(), 1000 + Math.random() * 9000, "debit");
+                            String accountId;
+                            if (bankAccount instanceof SavingAccountDTO){
+                                accountId=((SavingAccountDTO) bankAccount).getId();
+                            }else {
+                                accountId=((CurrentAccountDTO)bankAccount).getId();
+                            }
+                            bankAccountService.credit(accountId, 1000 + Math.random() * 20000, "credit");
+                            bankAccountService.debit(accountId, 1000 + Math.random() * 9000, "debit");
                         }
                     }
                 } catch (CustomerNotFoundException | BankAccountNotFoundException | BalanceNotSufficientException e) {

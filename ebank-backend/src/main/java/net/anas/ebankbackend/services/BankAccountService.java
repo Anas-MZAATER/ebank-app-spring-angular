@@ -1,7 +1,10 @@
 package net.anas.ebankbackend.services;
 
 import jdk.dynalink.Operation;
+import net.anas.ebankbackend.dtos.BankAccountDTO;
+import net.anas.ebankbackend.dtos.CurrentAccountDTO;
 import net.anas.ebankbackend.dtos.CustomerDTO;
+import net.anas.ebankbackend.dtos.SavingAccountDTO;
 import net.anas.ebankbackend.entities.BankAccount;
 import net.anas.ebankbackend.entities.CurrentAcount;
 import net.anas.ebankbackend.entities.Customer;
@@ -17,9 +20,9 @@ import java.util.List;
 public interface BankAccountService {
     CustomerDTO createCustomer(CustomerDTO customerDTO) throws CustomerAlreadyExistException;
 
-    CurrentAcount createCurrentBankAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException;
+    CurrentAccountDTO createCurrentBankAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException;
 
-    SavingAcount createSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
+    SavingAccountDTO createSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
 
     List<CustomerDTO> getCustomers();
 
@@ -29,12 +32,12 @@ public interface BankAccountService {
 
     void deleteCustomer(Long customerId);
 
-    BankAccount getBankAccount(String accountId) throws AccountNotFoundException, BankAccountNotFoundException;
+    BankAccountDTO getBankAccount(String accountId) throws BankAccountNotFoundException;
 
     void debit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;
     void credit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;
     void virement(String accountIdSource, String accountIdDestination, double amount) throws BankAccountNotFoundException, BalanceNotSufficientException;
 
-    List<BankAccount> getAllBankAccount();
+    List<BankAccountDTO> getBankAccounts();
 
 }
