@@ -14,6 +14,8 @@ import net.anas.ebankbackend.repositories.AccountOperationRepo;
 import net.anas.ebankbackend.repositories.BanckAccountRepo;
 import net.anas.ebankbackend.repositories.CustomerRepo;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -256,6 +258,24 @@ public class BankAccountServiceImpl implements BankAccountService {
         List<AccountOperation> accountOperations = accountOperationRepo.findByBankAccountId(accountId);
         return accountOperations.stream().map(accountOperation -> dtoMapper
                 .toAccountOperationDTO(accountOperation)).toList();
+    }
+
+    @Override
+    public AccountHistoryDTO getAccountHistoryByPage(String accountId, int page, int size) throws BankAccountNotFoundException {
+        BankAccount bankAccount=banckAccountRepo.findById(accountId).orElse(null);
+        if(bankAccount==null){
+            throw new BankAccountNotFoundException("Account with id: "+accountId+" not found");
+        }
+        Page<AccountOperation> accountOperations = accountOperationRepo.findByBankAccountId(accountId, PageRequest.of(page, size));
+        AccountHistoryDTO accountHistoryDTO = new AccountHistoryDTO();
+        List<AccountOperationDTO> accountOperationDTOS = accountOperations.getContent().stream().map(op -> dtoMapper.toAccountOperationDTO(op)).toList();
+        accountHistoryDTO.setAccountOperationDTOS(accountOperationDTOS);
+        accountHistoryDTO.setAccountId(bankAccount.getId());
+        accountHistoryDTO.setBalance(bankAccount.getBalance());
+        accountHistoryDTO.setPageSize(size);
+        accountHistoryDTO.setCurrentPage(page);
+        accountHistoryDTO.setTotalPages(accountOperations.getTotalPages());
+        return accountHistoryDTO;
     }
 
 }

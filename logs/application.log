@@ -1384,3 +1384,51 @@ java.lang.IllegalArgumentException: Source must not be null
 2025-08-05T20:21:29.061+01:00  INFO 30220 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-08-05T20:21:29.063+01:00  INFO 30220 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-08-05T20:21:29.069+01:00  INFO 30220 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-05T20:29:43.175+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Starting EbankBackendApplication using Java 21.0.5 with PID 20432 (D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular\ebank-backend\target\classes started by User in D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\4.clone e-bank project\e-bank-spring-angular)
+2025-08-05T20:29:43.177+01:00 DEBUG 20432 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-05T20:29:43.177+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-05T20:29:43.746+01:00  INFO 20432 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-05T20:29:43.790+01:00  INFO 20432 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2025-08-05T20:29:44.117+01:00  INFO 20432 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-08-05T20:29:44.127+01:00  INFO 20432 --- [ebank-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-05T20:29:44.127+01:00  INFO 20432 --- [ebank-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-05T20:29:44.166+01:00  INFO 20432 --- [ebank-backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-05T20:29:44.167+01:00  INFO 20432 --- [ebank-backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 956 ms
+2025-08-05T20:29:44.283+01:00  INFO 20432 --- [ebank-backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05T20:29:44.318+01:00  INFO 20432 --- [ebank-backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-05T20:29:44.349+01:00  INFO 20432 --- [ebank-backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-05T20:29:44.520+01:00  INFO 20432 --- [ebank-backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-05T20:29:44.543+01:00  INFO 20432 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-05T20:29:44.761+01:00  INFO 20432 --- [ebank-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2444c3df
+2025-08-05T20:29:44.762+01:00  INFO 20432 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-05T20:29:44.798+01:00  WARN 20432 --- [ebank-backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05T20:29:44.809+01:00  INFO 20432 --- [ebank-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-05T20:29:45.515+01:00  INFO 20432 --- [ebank-backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05T20:29:45.814+01:00  INFO 20432 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T20:29:46.104+01:00  WARN 20432 --- [ebank-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05T20:29:46.398+01:00  INFO 20432 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-08-05T20:29:46.403+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Started EbankBackendApplication in 3.603 seconds (process running for 4.118)
+2025-08-05T20:29:46.505+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:1 by X
+2025-08-05T20:29:46.517+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:2 by X
+2025-08-05T20:29:46.524+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:3 by X
+2025-08-05T20:29:46.551+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: b47e648b-2016-4df7-9087-b36c47ebcc21 by: 1
+2025-08-05T20:29:46.569+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 069effbb-d092-41c8-a013-00aea2bd515f by :1
+2025-08-05T20:29:46.576+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 0a6dc5e5-abce-45c5-8efb-3167a622a269 by: 2
+2025-08-05T20:29:46.584+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 8a329c05-0c80-434a-b9b1-bcd677742215 by :2
+2025-08-05T20:29:46.591+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 7a5bb794-bd20-407f-9c28-fd610d454347 by: 3
+2025-08-05T20:29:46.600+01:00  INFO 20432 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: ac938469-0740-4a09-a9ea-baf454bd4dc7 by :3
+2025-08-05T20:29:58.010+01:00  INFO 20432 --- [ebank-backend] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05T20:29:58.010+01:00  INFO 20432 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-05T20:29:58.010+01:00  INFO 20432 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-05T20:52:54.621+01:00  INFO 20432 --- [ebank-backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-05T20:52:54.634+01:00  INFO 20432 --- [ebank-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-05T20:52:54.641+01:00  INFO 20432 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-05T20:52:54.641+01:00  INFO 20432 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-05T20:52:54.651+01:00  INFO 20432 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
