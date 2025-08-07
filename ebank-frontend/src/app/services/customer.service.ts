@@ -12,7 +12,7 @@ export class CustomerService {
   }
 
   public getCustomers():Observable<Array<Customer>>{
-    return this.http.get<Array<Customer>>("http://localhost:8083/customers")
+    return this.http.get<Array<Customer>>("http://localhost:8083/customer")
   }
 
 }
