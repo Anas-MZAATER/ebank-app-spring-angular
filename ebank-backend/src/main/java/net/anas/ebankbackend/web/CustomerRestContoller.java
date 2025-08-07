@@ -5,15 +5,13 @@ import net.anas.ebankbackend.dtos.CustomerDTO;
 import net.anas.ebankbackend.exceptions.CustomerAlreadyExistException;
 import net.anas.ebankbackend.exceptions.CustomerNotFoundException;
 import net.anas.ebankbackend.services.BankAccountService;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@CrossOrigin("*")
 public class CustomerRestContoller {
     private BankAccountService bankAccountService;
 
