@@ -4,3 +4,49 @@
 2025-08-07T04:43:08.838+01:00  INFO 29052 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-08-07T04:43:08.853+01:00  INFO 29052 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-08-07T04:43:08.860+01:00  INFO 29052 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-07T11:55:34.068+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Starting EbankBackendApplication using Java 21.0.5 with PID 10960 (D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\w.e-bank-spring-JWT-angular-bootstrap\ebank-backend\target\classes started by User in D:\supmti\java\JEE\RENDU COTE CLIENT WITH SPRING ET ANGULAR\w.e-bank-spring-JWT-angular-bootstrap)
+2025-08-07T11:55:34.070+01:00 DEBUG 10960 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-07T11:55:34.072+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-07T11:55:34.966+01:00  INFO 10960 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-07T11:55:35.034+01:00  INFO 10960 --- [ebank-backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2025-08-07T11:55:35.569+01:00  INFO 10960 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-08-07T11:55:35.586+01:00  INFO 10960 --- [ebank-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-07T11:55:35.587+01:00  INFO 10960 --- [ebank-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-07T11:55:35.639+01:00  INFO 10960 --- [ebank-backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-07T11:55:35.641+01:00  INFO 10960 --- [ebank-backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1514 ms
+2025-08-07T11:55:35.806+01:00  INFO 10960 --- [ebank-backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-07T11:55:35.854+01:00  INFO 10960 --- [ebank-backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-07T11:55:35.885+01:00  INFO 10960 --- [ebank-backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-07T11:55:36.138+01:00  INFO 10960 --- [ebank-backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-07T11:55:36.164+01:00  INFO 10960 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-07T11:55:36.581+01:00  INFO 10960 --- [ebank-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a34a51e
+2025-08-07T11:55:36.584+01:00  INFO 10960 --- [ebank-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-07T11:55:36.647+01:00  WARN 10960 --- [ebank-backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-07T11:55:36.662+01:00  INFO 10960 --- [ebank-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-07T11:55:37.864+01:00  INFO 10960 --- [ebank-backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-07T11:55:39.341+01:00  INFO 10960 --- [ebank-backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-07T11:55:39.770+01:00  WARN 10960 --- [ebank-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-07T11:55:40.233+01:00  INFO 10960 --- [ebank-backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-08-07T11:55:40.241+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.EbankBackendApplication            : Started EbankBackendApplication in 6.715 seconds (process running for 7.491)
+2025-08-07T11:55:40.410+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:1 by X
+2025-08-07T11:55:40.425+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:2 by X
+2025-08-07T11:55:40.433+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : createCustomer with id:3 by X
+2025-08-07T11:55:40.470+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 6726b4ea-a20a-4296-a99c-b1e4dcf472f1 by: 1
+2025-08-07T11:55:40.500+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 7653d4a4-d0f1-4e3d-b965-8d9ea70dfe5a by :1
+2025-08-07T11:55:40.510+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: 122821db-1292-4f55-92b5-f74f53adbd8b by: 2
+2025-08-07T11:55:40.520+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: b65cc5a3-324e-4a85-b6a3-f16dd4cdaf1a by :2
+2025-08-07T11:55:40.533+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : currentBankAccount id: eee3b8a4-ad4d-4fa6-8db3-108e402f30fb by: 3
+2025-08-07T11:55:40.545+01:00  INFO 10960 --- [ebank-backend] [main] n.a.e.services.BankAccountServiceImpl    : savingBankAccount id: 8e44d406-a62c-40ea-8327-16563722e0ac by :3
+2025-08-07T12:01:11.669+01:00  INFO 10960 --- [ebank-backend] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-07T12:01:11.670+01:00  INFO 10960 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-07T12:01:11.672+01:00  INFO 10960 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-07T12:37:55.699+01:00  WARN 10960 --- [ebank-backend] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s384ms143µs300ns).
+2025-08-07T12:54:49.506+01:00  WARN 10960 --- [ebank-backend] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m53s805ms452µs200ns).
+2025-08-07T21:34:25.691+01:00  WARN 10960 --- [ebank-backend] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h39m47s922ms281µs).
