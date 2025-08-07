@@ -19,7 +19,12 @@ export class Customers implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customers= this.customersService.getCustomers();
+    this.customers= this.customersService.getCustomers().pipe(
+          catchError(err => {
+              this.errorMessage=err.message;
+              return throwError(err);
+          })
+    )
   }
 
 }
