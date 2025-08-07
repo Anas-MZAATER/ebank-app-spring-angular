@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CustomerService} from "../services/customer.service";
-import {Observable} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
+import {Customer} from "../model/customer.model";
 
 @Component({
   selector: 'app-customers',
@@ -10,7 +11,7 @@ import {Observable} from "rxjs";
   styleUrl: './customers.css'
 })
 export class Customers implements OnInit {
-  customers! : Observable<any>;
+  customers! : Observable<Array<Customer>>;
   // errorMessage:String|undefined;
   errorMessage!:object;
 
