@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Customer} from "../model/customer.model";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-  backendHost:string="http://localhost:8083";
 
   constructor(private http:HttpClient) {
   }
 
   public getCustomers():Observable<Array<Customer>>{
-    return this.http.get<Array<Customer>>(this.backendHost+"/customers");
+    return this.http.get<Array<Customer>>(environment.backendHost+"/customers");
   }
 
   public searchCustomers(kw:string):Observable<Array<Customer>>{
-    return this.http.get<Array<Customer>>(this.backendHost+"/customers/search?kw="+kw);
+    return this.http.get<Array<Customer>>(environment.backendHost+"/customers/search?kw="+kw);
   }
 
 }
