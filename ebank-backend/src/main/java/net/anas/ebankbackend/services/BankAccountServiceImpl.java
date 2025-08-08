@@ -278,4 +278,11 @@ public class BankAccountServiceImpl implements BankAccountService {
         return accountHistoryDTO;
     }
 
+    @Override
+    public List<CustomerDTO> searchCustomers(String kw) {
+        List<Customer> customers = customerRepo.searchCustomers(kw);
+        List<CustomerDTO> customersDTOS = customers.stream().map(Customer -> dtoMapper.toCustomerDTO(Customer)).toList();
+        return customersDTOS;
+    }
+
 }

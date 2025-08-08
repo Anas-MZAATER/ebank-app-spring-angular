@@ -25,6 +25,11 @@ public class CustomerRestContoller {
         return bankAccountService.getCustomer(customerId);
     }
 
+    @GetMapping("customers/search")
+    public List<CustomerDTO> searchCustomers(@RequestParam(name = "kw",defaultValue = "") String kw) {
+        return bankAccountService.searchCustomers(kw);
+    }
+
     @PostMapping("customers")
     // les données de customerDTO en va les recupérer à partir de corps de la requete en format JSON
     public CustomerDTO saveCustomer(@RequestBody CustomerDTO customerDTO) throws CustomerAlreadyExistException {
@@ -41,6 +46,7 @@ public class CustomerRestContoller {
     public void deleteCustomer(@PathVariable Long customerId){
         bankAccountService.deleteCustomer(customerId);
     }
+
 
 
 }
