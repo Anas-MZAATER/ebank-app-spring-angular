@@ -119,3 +119,6 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+### Journalisation Binary file ###
+*.gz
