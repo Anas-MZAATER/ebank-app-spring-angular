@@ -411,3 +411,10 @@ org.hibernate.QueryParameterException: No argument for named parameter ':kw'
 2025-08-08T12:46:03.453+01:00  INFO 24512 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-08-08T12:46:03.454+01:00  INFO 24512 --- [ebank-backend] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2025-08-08T12:46:04.031+01:00  INFO 24512 --- [ebank-backend] [http-nio-8083-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 255 ms
+2025-08-08T21:24:22.203+01:00  WARN 24512 --- [ebank-backend] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h40m5s529ms598µs100ns).
+2025-08-08T22:14:21.977+01:00  WARN 24512 --- [ebank-backend] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m59s333ms305µs600ns).
+2025-08-08T22:22:55.563+01:00  INFO 24512 --- [ebank-backend] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-08T22:22:55.569+01:00  INFO 24512 --- [ebank-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-08T22:22:55.579+01:00  INFO 24512 --- [ebank-backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-08T22:22:55.587+01:00  INFO 24512 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-08T22:22:55.592+01:00  INFO 24512 --- [ebank-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

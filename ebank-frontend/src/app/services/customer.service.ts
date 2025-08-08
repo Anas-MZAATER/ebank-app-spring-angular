@@ -7,12 +7,17 @@ import {Customer} from "../model/customer.model";
   providedIn: 'root'
 })
 export class CustomerService {
+  backendHost:string="http://localhost:8083";
 
   constructor(private http:HttpClient) {
   }
 
   public getCustomers():Observable<Array<Customer>>{
-    return this.http.get<Array<Customer>>("http://localhost:8083/customer")
+    return this.http.get<Array<Customer>>(this.backendHost+"/customers");
+  }
+
+  public searchCustomers(kw:string):Observable<Array<Customer>>{
+    return this.http.get<Array<Customer>>(this.backendHost+"/customers/search?kw="+kw);
   }
 
 }

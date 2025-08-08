@@ -3,6 +3,19 @@
             <div class="card">
                 <div class="card-header">Customers</div>
                 <div class="card-body">
+                    @if (searchFormGroup)
+                    {
+                        {{this.searchFormGroup.value | json}}
+                        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+                            <div class="input-group">
+                                <label class="input-group-text">SearchByName :</label>
+                                <input type="text" formControlName="keyword" class="form-control">
+                                <button class="btn btn-info">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    }
                     <table class="table">
                         <thead>
                         <tr>
