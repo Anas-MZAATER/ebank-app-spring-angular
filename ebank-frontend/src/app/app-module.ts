@@ -8,13 +8,15 @@ import { Customers } from './customers/customers';
 import { Accounts } from './accounts/accounts';
 import { HttpClientModule } from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { NewCustomer } from './new-customer/new-customer';
 
 @NgModule({
   declarations: [
     App,
     Navbar,
     Customers,
-    Accounts
+    Accounts,
+    NewCustomer
   ],
   imports: [
     BrowserModule,

@@ -19,5 +19,8 @@ export class CustomerService {
   public searchCustomers(kw:string):Observable<Array<Customer>>{
     return this.http.get<Array<Customer>>(environment.backendHost+"/customers/search?kw="+kw);
   }
+  public saveCustomer(customer:Customer):Observable<Customer>{
+    return this.http.post<Customer>(environment.backendHost+"/customers",customer);
+  }
 
 }
