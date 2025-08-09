@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Customer} from "../model/customer.model";
 import {CustomerService} from "../services/customer.service";
+import {catchError, throwError} from "rxjs";
 
 @Component({
   selector: 'app-new-customer',
@@ -13,20 +14,20 @@ export class NewCustomer implements OnInit{
   newCustomerFormGroup!:FormGroup;
 
   constructor(private fb:FormBuilder,
-              private customerService:CustomerService) {
+              private customersService:CustomerService) {
   }
 
   ngOnInit(): void {
     this.newCustomerFormGroup=this.fb.group({
-      name:this.fb.control(null),
-      email:this.fb.control(null)
+      name:this.fb.control(null,[Validators.required,Validators.minLength(2)]),
+      email:this.fb.control(null,[Validators.required,Validators.email])
     });
   }
 
 
   handleSaveCustomer() {
     let customer:Customer=this.newCustomerFormGroup.value;
-    this.customerService.saveCustomer(customer).subscribe({
+    this.customersService.saveCustomer(customer).subscribe({
       next:data=>{
         alert("customer saved successfully!")
       },

@@ -6,12 +6,30 @@
                 <div class="mb-3">
                     <label class="form-label">Name :</label>
                     <input type="text" formControlName="name" class="form-control" autofocus>
+                    <!-- Erreur : Champ requis -->
+                    <span *ngIf="newCustomerFormGroup.controls['name'].touched
+                    && newCustomerFormGroup.controls['name'].errors?.['required']">
+                        Name is Required*
+                    </span>
+                    <!-- Erreur : Longueur minimale -->
+                    <span *ngIf="newCustomerFormGroup.controls['name'].touched
+                    && newCustomerFormGroup.controls['name'].errors?.['minlength']">
+                        Name must be at least 2 characters long
+                    </span>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email :</label>
-                    <input type="text" formControlName="email" class="form-control">
+                    <input type="email" formControlName="email" class="form-control">
+                    <span *ngIf="newCustomerFormGroup.controls['email'].touched
+                    && newCustomerFormGroup.controls['email'].errors?.['required']">
+                        Email is Required*
+                    </span>
+                    <span *ngIf="newCustomerFormGroup.controls['email'].touched
+                    && newCustomerFormGroup.controls['email'].errors?.['email']">
+                        Email forme is not valid
+                    </span>
                 </div>
-                <button type="submit" class="btn btn-success">Save</button>
+                <button [disabled]="!newCustomerFormGroup.valid" type="submit" class="btn btn-success">Save</button>
             </form>
         </div>
     </div>
