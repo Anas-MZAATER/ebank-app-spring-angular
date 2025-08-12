@@ -8,7 +8,6 @@ import net.anas.ebankbackend.exceptions.BankAccountNotFoundException;
 import net.anas.ebankbackend.services.BankAccountService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.login.AccountNotFoundException;
 import java.util.List;
 
 
