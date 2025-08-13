@@ -35,4 +35,9 @@ export class Accounts implements OnInit {
     /// OR
     this.accountObservable= this.accountService.getAccount(accountId,this.currentPage,this.pageSize);
   }
+
+  goToPage(page: number) {
+    this.currentPage=page;
+    this.handleSearchAccount()
+  }
 }

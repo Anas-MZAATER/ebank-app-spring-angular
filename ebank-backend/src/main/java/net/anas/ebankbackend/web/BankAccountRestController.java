@@ -39,4 +39,5 @@ public class BankAccountRestController {
             @RequestParam(name = "size",defaultValue = "5") int size) throws BankAccountNotFoundException {
         return bankAccountService.getAccountHistoryByPage(accountId,page,size);
     }
+
 }
