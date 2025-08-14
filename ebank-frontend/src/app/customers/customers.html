@@ -38,9 +38,7 @@
                 </div>
             </div>
         } @else if (errorMessage) {
-            <div class="text-danger">
-                {{errorMessage}}
-            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
         } @else {
             <div class="spinner-container">
                 <!--<mat-spinner></mat-spinner>-->
