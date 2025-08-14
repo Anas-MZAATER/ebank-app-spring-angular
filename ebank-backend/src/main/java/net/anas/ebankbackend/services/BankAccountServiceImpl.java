@@ -266,7 +266,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         if(bankAccount==null){
             throw new BankAccountNotFoundException("Account with id: "+accountId+" not found");
         }
-        Page<AccountOperation> accountOperations = accountOperationRepo.findByBankAccountId(accountId, PageRequest.of(page, size));
+        Page<AccountOperation> accountOperations = accountOperationRepo.findByBankAccountIdOrderByOperationDateDesc(accountId, PageRequest.of(page, size));
         AccountHistoryDTO accountHistoryDTO = new AccountHistoryDTO();
         List<AccountOperationDTO> accountOperationDTOS = accountOperations.getContent().stream().map(op -> dtoMapper.toAccountOperationDTO(op)).toList();
         accountHistoryDTO.setAccountOperationDTOS(accountOperationDTOS);

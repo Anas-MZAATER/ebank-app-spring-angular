@@ -48,7 +48,45 @@
             </div>
         </div>
         <div class="col col-md-6">
-
+            <div class="card" *ngIf="accountObservable">
+                <div class="card-header">Operations</div>
+                <div class="card-body">
+                    {{operationFormGroup.value | json}}
+                    <form [formGroup]="operationFormGroup" (ngSubmit)="handleAccountOperation()" method="post">
+                        <!-- chose opération -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="operationType" value="DEBIT" id="debit">
+                            <label class="form-check-label" for="debit">Debit</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="operationType" value="CREDIT" id="credit">
+                            <label class="form-check-label" for="credit">Credit</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="operationType" value="TRANSFER" id="transfer">
+                            <label class="form-check-label" for="transfer">Transfer</label>
+                        </div>
+                        <!-- chose accountDestination -->
+                        <div class="mt-2" *ngIf="operationFormGroup.value.operationType=='TRANSFER'">
+                            <label class="form-label">Account destination :</label>
+                            <input formControlName="accountDestination" type="text" class="form-control">
+                        </div>
+                        <!-- chose amount -->
+                        <div class="mt-2">
+                            <label class="form-label">Amount :</label>
+                            <input formControlName="amount" type="text" class="form-control">
+                        </div>
+                        <!-- chose desc -->
+                        <div class="mt-2">
+                            <label class="form-label">Description :</label>
+                            <input formControlName="desc" type="text" class="form-control">
+                        </div>
+                        <div class="d-grid mt-2">
+                            <button class="btn btn-success">save operation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
