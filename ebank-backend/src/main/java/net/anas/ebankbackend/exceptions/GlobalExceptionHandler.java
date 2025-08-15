@@ -39,19 +39,51 @@ package net.anas.ebankbackend.exceptions;
 
 
 
+
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@Slf4j
+import java.time.LocalDateTime;
+
 @ControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
+
+    // Gestion des exceptions métier spécifiques
+    @ExceptionHandler({
+            BalanceNotSufficientException.class,
+            BankAccountNotFoundException.class,
+            CustomerNotFoundException.class,
+            IllegalArgumentException.class
+    })
+    public ResponseEntity<String> handleBusinessExceptions(Exception ex) {
+        log.warn("Business exception occurred: {}", ex.getMessage(), ex);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ex.getMessage());
+
+    }
 
     @ExceptionHandler(CustomerAlreadyExistException.class)
     public ResponseEntity<String> handleCustomerAlreadyExistException(CustomerAlreadyExistException ex) {
-        log.error("CustomerAlreadyExistException occurred: {}", ex.getMessage(), ex); // Ensure ex is included
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+        log.error("CustomerAlreadyExistException occurred: {}", ex.getMessage(), ex);
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ex.getMessage());
     }
+
+    // Gestion des exceptions techniques
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGeneralException(Exception ex) {
+        log.error("Unexpected error occurred", ex);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("An unexpected error occurred. Please contact support.");
+    }
+
+    // (Optionnel) Réponse enrichie avec des métadonnées
+//    private Record ErrorResponse(String message, HttpStatus status, LocalDateTime timestamp) {
+//        return new Record(message, status.value(), timestamp);
+//    }
 }

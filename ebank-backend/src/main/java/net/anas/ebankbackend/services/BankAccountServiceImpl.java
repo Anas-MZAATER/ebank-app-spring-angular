@@ -197,9 +197,15 @@ public class BankAccountServiceImpl implements BankAccountService {
 
     @Override
     public void debit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException {
+        if (accountId == null || accountId.trim().isEmpty()) {
+            throw new BankAccountNotFoundException("Account ID is required");
+        }
         BankAccount bankAccount = banckAccountRepo.findById(accountId)
                 .orElseThrow(()->new BankAccountNotFoundException("Account with id: "+accountId+" not found"));
 
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
         if(bankAccount.getBalance()<amount)
             throw new BalanceNotSufficientException("Balance non sufficient");
 
@@ -215,9 +221,16 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
     @Override
-    public void credit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException {
+    public void credit(String accountId, double amount, String description) throws BankAccountNotFoundException {
+        if (accountId == null || accountId.trim().isEmpty()) {
+            throw new BankAccountNotFoundException("Account ID is required");
+        }
         BankAccount bankAccount = banckAccountRepo.findById(accountId)
                 .orElseThrow(()->new BankAccountNotFoundException("Account with id: "+accountId+" not found"));
+
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
+        }
 
         AccountOperation accountOperation=new AccountOperation();
         accountOperation.setType(OperationType.CREDIT);
@@ -236,7 +249,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         credit(accountIdDestination,amount,"transfer from : "+accountIdSource);
     }
 
-    //pas interesant de returner tout les compted
+    //pas interesant de returner tout les compte
     @Override
     public List<BankAccountDTO> getBankAccounts() {
         List<BankAccount> bankAccounts =banckAccountRepo.findAll();
@@ -262,6 +275,9 @@ public class BankAccountServiceImpl implements BankAccountService {
 
     @Override
     public AccountHistoryDTO getAccountHistoryByPage(String accountId, int page, int size) throws BankAccountNotFoundException {
+        if (accountId == "null" || accountId.trim().isEmpty()) {
+            throw new BankAccountNotFoundException("Account ID is required");
+        }
         BankAccount bankAccount=banckAccountRepo.findById(accountId).orElse(null);
         if(bankAccount==null){
             throw new BankAccountNotFoundException("Account with id: "+accountId+" not found");

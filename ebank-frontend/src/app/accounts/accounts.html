@@ -53,7 +53,7 @@
                     </ng-container>
                     <ng-template #errorTemplate>
                         @if (errorMessage){
-                            <div class="alert alert-danger">{{ errorMessage }}</div>
+                            <div class="alert alert-danger">{{ errorMessage | json }}</div>
                         }
                     </ng-template>
                 </div>

@@ -43,7 +43,7 @@ export class Accounts implements OnInit {
     /// OR
     this.accountObservable= this.accountService.getAccount(accountId,this.currentPage,this.pageSize).pipe(
         catchError(err => {
-          this.errorMessage=err.message;
+          this.errorMessage=err.error;
           return throwError(err);
         })
     )
