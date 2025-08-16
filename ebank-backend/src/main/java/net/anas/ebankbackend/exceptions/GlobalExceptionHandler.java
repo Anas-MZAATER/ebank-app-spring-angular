@@ -82,6 +82,7 @@ public class GlobalExceptionHandler {
                 .body("An unexpected error occurred. Please contact support.");
     }
 
+
     // (Optionnel) Réponse enrichie avec des métadonnées
 //    private Record ErrorResponse(String message, HttpStatus status, LocalDateTime timestamp) {
 //        return new Record(message, status.value(), timestamp);
